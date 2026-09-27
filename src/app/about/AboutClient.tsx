@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { FileText } from "lucide-react";
+import { FileText, Download } from "lucide-react";
 import { ProfileData } from "@/lib/types";
 import { ResumeModal } from "@/components/ResumeModal";
 
@@ -52,7 +52,7 @@ export const AboutClient: React.FC<AboutClientProps> = ({ profile }) => {
 
             </div>
 
-            <div className="pt-2">
+            <div className="pt-2 space-y-2">
               <button
                 onClick={() => setResumeOpen(true)}
                 className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-[#111418] hover:bg-[#1E293B] text-white text-xs font-medium rounded-lg transition-colors shadow-subtle"
@@ -60,6 +60,14 @@ export const AboutClient: React.FC<AboutClientProps> = ({ profile }) => {
                 <FileText className="w-3.5 h-3.5" />
                 <span>View Full Curriculum Vitae</span>
               </button>
+              <a
+                href={profile.resumeUrl || "/shamanth_s.pdf"}
+                download="Shamanth_S_Resume.pdf"
+                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#FAF9F6] hover:bg-[#F4F3EE] border border-[#E4E3DC] text-[#111418] text-xs font-medium rounded-lg transition-colors"
+              >
+                <Download className="w-3.5 h-3.5" />
+                <span>Download Shamanth S. PDF</span>
+              </a>
             </div>
           </div>
         </div>

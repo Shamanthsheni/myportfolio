@@ -12,7 +12,7 @@ export const INITIAL_CMS_DATA: CMSData = {
     location: "Bengaluru, Karnataka, India",
     github: "https://github.com/Shamanthsheni",
     linkedin: "https://www.linkedin.com/in/shamanth-sheni-b05b6b307/",
-    resumeUrl: "/resume.pdf",
+    resumeUrl: "/shamanth_s.pdf",
     statusBadge: "",
     skills: [
       {
