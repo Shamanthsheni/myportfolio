@@ -3,25 +3,129 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FAF9F6;
+  --foreground: #111418;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    border-color: #E4E3DC;
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF9F6;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4D3CC;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A8A7A0;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Subtle glassmorphism */
+.glass-nav {
+  background: rgba(250, 249, 246, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Editorial prose styling for blog and case studies */
+.prose-editorial {
+  color: #333A44;
+  line-height: 1.8;
+  font-size: 1.0625rem;
+}
+
+.prose-editorial p {
+  margin-bottom: 1.5rem;
+}
+
+.prose-editorial h1,
+.prose-editorial h2,
+.prose-editorial h3,
+.prose-editorial h4 {
+  color: #111418;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+.prose-editorial h2 {
+  font-size: 1.75rem;
+  margin-top: 2.75rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #EAE9E2;
+}
+
+.prose-editorial h3 {
+  font-size: 1.35rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose-editorial ul,
+.prose-editorial ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.prose-editorial ul {
+  list-style-type: disc;
+}
+
+.prose-editorial ol {
+  list-style-type: decimal;
+}
+
+.prose-editorial li {
+  margin-bottom: 0.5rem;
+}
+
+.prose-editorial blockquote {
+  border-left: 3px solid #111418;
+  padding-left: 1.25rem;
+  font-style: italic;
+  color: #5F6978;
+  margin: 1.75rem 0;
+}
+
+.prose-editorial code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: #F3F2EE;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  color: #111418;
+}
+
+.prose-editorial pre {
+  background: #181B20;
+  color: #F3F4F6;
+  padding: 1.25rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 1.75rem 0;
+}
+
+.prose-editorial pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
 }
